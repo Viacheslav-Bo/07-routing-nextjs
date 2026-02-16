@@ -1,0 +1,18 @@
+import css from './LayoutNotes.module.css';
+
+interface FilteredLayoutProps {
+  children: React.ReactNode;
+  sidebar: React.ReactNode;
+}
+
+export default function FilteredLayout({
+  children,
+  sidebar,
+}: FilteredLayoutProps) {
+  return (
+    <div className={css.container}>
+      <aside className={css.sidebar}>{sidebar}</aside>
+      <div className={css.notesWrapper}>{children}</div>
+    </div>
+  );
+}

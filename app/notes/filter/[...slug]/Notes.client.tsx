@@ -26,6 +26,7 @@ function NotesClient({ initialParams }: { initialParams?: GetNoteParams }) {
     page: currentPage,
     perPage: initialParams?.perPage ?? PER_PAGE,
     search: searchQuery.trim() || undefined,
+    ...(initialParams?.tag ? { tag: initialParams.tag } : {}),
   };
 
   const { data, isFetching } = useQuery({
